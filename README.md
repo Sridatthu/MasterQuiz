@@ -6,13 +6,14 @@ The Master Quiz offers interactive quizzes for testing knowledge in various prog
 https://masterquiz18.netlify.app/
 
 
-![MasterQuiz]()
+![MasterQuiz](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz1.png)
 
 
-![MasterQuiz2]()
+![MasterQuiz2](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz2.png)
 
 
-![MasterQuiz3]()
+![MasterQuiz3](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz3.png)
+
 
 ## Features
 
@@ -35,18 +36,18 @@ https://masterquiz18.netlify.app/
 - MySQL(DataBase)
 
 ## Below are the website shot
-![javaQuiz]()
+![javaQuiz](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz4.png)
 
-![javaQuiz2]()
+![javaQuiz2](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz5.png)
 
-![pythonQuiz]()
+![pythonQuiz](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz6.png)
 
-![jsQuiz2]()
+![jsQuiz2](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz7.png)
 
-![MysqlQuiz]()
+![MysqlQuiz](https://github.com/Sridatthu/MasterQuiz/blob/main/images/quiz8.png)
 
 ## Results
 
-![Result1]()
+![Result1](https://github.com/Sridatthu/MasterQuiz/blob/main/images/result1.png)
 
-![Result2]()
+![Result2](https://github.com/Sridatthu/MasterQuiz/blob/main/images/result2.png)
