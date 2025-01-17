@@ -1,0 +1,204 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Landing Page */
+.landing-page {
+    background: linear-gradient(135deg, #057a7a, #38b6b6);
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.landing-page .wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.flex-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vacation-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    background: linear-gradient(90deg, #ff8c00, #ffa500);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.quiz-header {
+    background: linear-gradient(135deg, #045454, #038383);
+    text-align: center;
+    padding: 2rem 1rem;
+    color: white;
+    border-radius: 50px 50px 0 0;
+    margin-top: -2rem;
+}
+
+.quiz-header .heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 30px;
+    margin: 0 1rem;
+}
+
+.main-nav a {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: #057a7a;
+    color: white;
+}
+
+/* Quiz Packages Section */
+.quiz-packages-section {
+    background: #f9f9f9;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 50px;
+    margin: 2rem;
+}
+
+.quiz-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #057a7a;
+}
+
+.package-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.package-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    text-align: center;
+}
+
+.package-card img {
+    width: 100%;  /* Adjust to the width of the card */
+    height: 200px;  /* Set the same height for all images */
+    object-fit: cover;  /* Ensures the image covers the area without distortion */
+    border-radius: 10px;  /* Rounded corners */
+}
+
+.card-heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+/* Notes Section */
+.notes-section {
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #e8f5f5, #c3ecec);
+    text-align: center;
+}
+
+.notes-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.notes-wrapper img {
+    width: 100%;  /* Ensures the image fills the wrapper */
+    height: 150px;  /* Fixed height for all images */
+    object-fit: cover;  /* Keeps aspect ratio without distortion */
+    border-radius: 10px;  /* Optional: adds rounded corners to the images */
+    cursor: pointer;  /* Keeps the pointer cursor for clickable images */
+}
+
+
+.notes-wrapper img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer-section {
+    background: #045454;
+    color: white;
+    text-align: center;
+    padding: 2rem; /* Increased padding for a larger footer */
+    font-size: 1.2rem; /* Increased font size */
+    position: relative; /* Ensures footer remains at the bottom */
+}
+
+.footer-section a {
+    color: #ff8c00;
+    text-decoration: underline;
+    font-weight: bold; /* Makes the link more prominent */
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffd700; /* A slightly lighter yellow on hover */
+}
