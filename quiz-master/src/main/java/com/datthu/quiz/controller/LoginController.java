@@ -1,18 +1,21 @@
 package com.datthu.quiz.controller;
 
+import com.datthu.quiz.Utils.JWTUtil;
 import com.datthu.quiz.dto.LoginRequest;
-import com.datthu.quiz.entity.JsQuestion;
-import com.datthu.quiz.entity.MysqlQuestion;
-import com.datthu.quiz.entity.PythonQuestion;
-import com.datthu.quiz.entity.QuizQuestion;
+import com.datthu.quiz.entity.*;
+import com.datthu.quiz.repo.UserRepo;
 import com.datthu.quiz.service.JsService;
 import com.datthu.quiz.service.MysqlService;
 import com.datthu.quiz.service.PythonService;
 import com.datthu.quiz.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:8080")
 @RestController
@@ -28,18 +31,55 @@ public class LoginController {
     JsService jsService;
     @Autowired
     PythonService pythonService;
+    @Autowired
+    UserRepo userRepo;
+    @Autowired
+    PasswordEncoder passwordEncoder;
+    @Autowired
+    JWTUtil jwtUtil;
 
-    // Hardcoded credentials for now
-    private final String USERNAME = "user";
-    private final String PASSWORD = "password";
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@RequestBody LoginRequest loginRequest) {
+        if (userRepo.findByUsername(loginRequest.getUsername()).isPresent()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email already exists.");
+        }
+
+        User user = User.builder()
+                .username(loginRequest.getUsername())
+                .password(passwordEncoder.encode(loginRequest.getPassword()))
+                .role("ROLE_USER")
+                .build();
+
+        User savedUser = userRepo.save(user);
+        String token = jwtUtil.generateToken(savedUser.getUsername());
+
+        return ResponseEntity.ok(Map.of(
+                "message", "User Added successfully!",
+                "token", token,
+                "data", savedUser
+        ));
+    }
+
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest loginRequest) {
-        if (USERNAME.equals(loginRequest.getUsername()) && PASSWORD.equals(loginRequest.getPassword())) {
-            return "Login Successful!";
-        } else {
-            return "Invalid username or password";
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
+        java.util.Optional<User> userOpt = userRepo.findByUsername(loginRequest.getUsername());
+        if (userOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
+
+        User user = userOpt.get();
+        if (!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+
+        String token = jwtUtil.generateToken(user.getUsername());
+
+        return ResponseEntity.ok(Map.of(
+                "message", "Login successful",
+                "token", token,
+                "data", user.getUsername()
+        ));
     }
     @GetMapping("/java")
     public List<QuizQuestion> getQuestions() {

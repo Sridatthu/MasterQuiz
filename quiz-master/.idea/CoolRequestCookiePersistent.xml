@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CoolRequestCookiePersistent">
+    <option name="cookies" value="[{&quot;domain&quot;:&quot;localhost:8080&quot;,&quot;infos&quot;:[{&quot;createTimeMillis&quot;:1751964719470,&quot;raw&quot;:&quot;JSESSIONID=348E93B0E078FAB2F36AF822EEEDD1EE; Path=/; HttpOnly&quot;,&quot;requestURL&quot;:&quot;http://localhost:8080/api/java&quot;}]}]" />
+  </component>
+</project>
